@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+
+  php:
+    build: ./php/
+    restart: unless-stopped
+    volumes:
+      - ./web/:/var/www/
+    networks:
+      - laravel-network
+
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    depends_on:
+      - "php"
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./web/:/var/www/
+    ports:
+      - 80:80
+      - 443:443
+      - 6001:6001
+    networks:
+      - laravel-network
+    
+  db:
+    image: mysql:8.0
+    environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_DATABASE: laravel
+       MYSQL_USER: laravel
+       MYSQL_PASSWORD: laravel
+    ports:
+      - "3306:3306"
+    volumes:
+       - $PWD/data:/var/lib/mysql
+       - $PWD/mysql:/etc/mysql/conf.d
+    networks:
+      - laravel-network
+
+networks:
+  laravel-network:
+    driver: bridge
+ 
+
+
+
+
