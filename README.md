@@ -25,7 +25,7 @@ Development Environment for Laravel
 
 2. Copy file .env.example to .env:
   ```sh
-     cp .env.example .env
+     cp web/.env.example web/.env
   ```
 
 4. Update .env:
