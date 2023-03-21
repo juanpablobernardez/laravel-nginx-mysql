@@ -15,6 +15,7 @@ Development Environment for Laravel
 ## Getting started
 * <a style="color:lightblue;" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04" target="_blank">Install docker</a> 
 * <a style="color:lightblue;" href="https://docs.docker.com/compose/install/linux/" target="_blank">Install docker-compose</a> 
+* <a style="color:lightblue;" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Install Git</a>
 ## Install laravel
 
 1. Clone laravel base project inside "web" folder:
